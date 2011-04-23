@@ -1,0 +1,16 @@
+<footer class="post-info">
+        <abbr class="postdate published" title="{{ article.date.isoformat() }}">
+            <span class="month m-{{ article.date.month }}">{{ article.date.month }}</span>
+            <span class="day d-{{ article.date.day }}">{{ article.date.day }}</span>
+            <span class="year y-{{ article.date.year }}">{{ article.date.year }}</span>
+        </abbr>
+
+        {% if article.author %}
+        <address class="vcard author">
+                Par <a class="url fn" href="#">{{ article.author }}</a>
+        </address>
+        {% endif %}
+<p>Dans <a href="{{ SITEURL }}/category/{{ article.category }}.html">{{ article.category }}</a>. {% if PDF_PROCESSOR %}<a href="{{ SITEURL }}/pdf/{{ article.slug }}.pdf">Obtenir en pdf</a>{% endif %}</p>
+{% include 'taglist.html' %}
+{% include 'translations.html' %}
+</footer><!-- /.post-info -->
